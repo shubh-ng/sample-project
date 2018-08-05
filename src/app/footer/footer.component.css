@@ -1,0 +1,11 @@
+mat-expansion-panel-header {
+    width: 50%;
+    margin: auto;
+}
+#email {
+    width: 100%;
+}
+.footer-para {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+}
