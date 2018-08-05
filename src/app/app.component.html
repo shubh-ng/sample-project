@@ -1,0 +1,51 @@
+<!-- <mat-progress-bar *ngIf="isLoaded" mode="indeterminate"></mat-progress-bar>
+<mat-card id="navbar">
+  <img id="icon" matTooltip="knowledge portal" src="./../assets/k_p_logo.png" width="80" height="80" routerLink="">
+
+  <div id="nav-links">
+    <button type="button" mat-raised-button class="toggle margin flow" color="primary" 
+    routerLink="country" matBadge={{noOfCountries}} matBadgePosition="before" matBadgeColor="accent">
+      <i class="fa fa-globe" aria-hidden="true" style="font-size: 25px" ></i>&nbsp;&nbsp;COUNTRY
+    </button>
+
+    <button type="button" mat-raised-button class="toggle margin" 
+    matBadge={{noOfNews}} matBadgePosition="before" matBadgeColor="accent"
+    color="primary" routerLink="news">
+      <i class="fa fa-newspaper-o" aria-hidden="true" style="font-size: 25px"></i>&nbsp;&nbsp;NEWS
+    </button>
+
+    <button type="button" mat-raised-button class="toggle" color="primary" routerLink="about">
+      <i class="fa fa-adjust" aria-hidden="true" style="font-size: 25px"></i>&nbsp;&nbsp;READ ABOUT YOU
+    </button>
+
+  </div> 
+    
+  <button type="button" class="blink" mat-fab matTooltip="open side navigation" (click)="drawer.toggle()" color="primary" id="toggle-btn" >
+    <i class={{toggleIcon}} (click)="toggle()" style="font-size: 25px"></i>
+  </button>
+</mat-card>
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="over">
+    <br>
+      <button type="button" mat-raised-button class="btn-width" color="primary" 
+      (click)="drawer.toggle()"
+      routerLink="country" matBadge={{noOfCountries}} matBadgePosition="before" matBadgeColor="accent">
+          <i class="fa fa-globe nav-links-icon" aria-hidden="true" ></i><span>COUNTRY</span>
+        </button><br><br><br>
+
+        <button type="button" mat-raised-button (click)="drawer.toggle()"
+        matBadge={{noOfNews}} matBadgePosition="before" matBadgeColor="accent"
+        color="primary" routerLink="news" class="btn-width">
+          <i class="fa fa-newspaper-o nav-links-icon" aria-hidden="true" style="font-size: 25px"></i><span class="news-span">NEWS</span>
+        </button><br><br><br>
+    
+        <button type="button"    mat-raised-button  color="primary" routerLink="about" 
+        (click)="drawer.toggle()" class="btn-width">
+          <i class="fa fa-adjust nav-links-icon" aria-hidden="true" style="font-size: 25px"></i><span>ABOUT YOU</span>
+        </button>
+  </mat-drawer>
+<router-outlet></router-outlet>
+<app-footer></app-footer>
+</mat-drawer-container>
+ -->
+<app-testing></app-testing>
