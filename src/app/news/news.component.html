@@ -1,0 +1,86 @@
+<mat-progress-bar *ngIf="isLoaded" mode="indeterminate"></mat-progress-bar>
+
+<mat-card>
+  <mat-card-title>News Updates &nbsp; <i class="fa fa-newspaper-o"></i></mat-card-title>
+  <p class="paragraph"> Reading healthy news on the daily basis is proved to be healthiest habit! </p>
+  <p class="paragraph"> Specially for students </p>
+  <p class="paragraph"> So we came up with interesting daily updated news for students to make their learning more enjoyable.</p>
+  <div class="container"
+     fxLayout
+     fxLayout.xs="column"
+     fxLayoutAlign="center"
+     fxLayoutGap="10px"
+     fxLayoutGap.xs="0">
+    <div class="item item-1" fxFlex="50%" *ngIf="newsDetails">
+        <mat-card *ngFor="let news of newsDetails">
+            <div class="container"
+            fxLayout
+            fxLayout.xs="column"
+            fxLayoutAlign="center"
+            fxLayoutGap="10px"
+            fxLayoutGap.xs="0">
+              <div class="item item-1" fxFlex="20%">
+                <img src={{news.urlToImage}} alt="IMG" class="img">
+              </div>              
+              <div class="item item-side" fxFlex="40%">
+                <p class="paragraph">{{news.source.name}}</p>
+              </div>             
+              <div class="item item-side" fxFlex="30%">
+                <p class="paragraph">{{news.author}}</p>
+              </div>                               
+            </div>
+            <mat-divider></mat-divider>
+
+            <div class="container"
+            fxLayout
+            fxLayout.xs="column"
+            fxLayoutAlign="center"
+            fxLayoutGap="10px"
+            fxLayoutGap.xs="0">
+              <div class="item item-1" fxFlex="100%">
+                <p class="paragraph">{{news.title|uppercase}}</p>
+              </div>                                         
+            </div>
+            <mat-divider></mat-divider>
+
+            <div class="container"
+            fxLayout
+            fxLayout.xs="column"
+            fxLayoutAlign="center"
+            fxLayoutGap="10px"
+            fxLayoutGap.xs="0">
+              <div class="item item-1" fxFlex="100%">
+                <p style="font-family: 'Merienda', cursive; ">{{news.description}}</p> 
+              </div>                                         
+            </div>
+            <mat-divider></mat-divider>
+
+            <div class="container"
+            fxLayout
+            fxLayout.xs="column"
+            fxLayoutAlign="center"
+            fxLayoutGap="10px"
+            fxLayoutGap.xs="0">
+              <div class="item item-1" fxFlex="100%">
+                <img src={{news.urlToImage}} alt="IMG">
+              </div>                                         
+            </div>
+            <mat-divider></mat-divider>
+
+            <div class="container"
+            fxLayout
+            fxLayout.xs="column"
+            fxLayoutAlign="center"
+            fxLayoutGap="10px"
+            fxLayoutGap.xs="0">
+              <div class="item item-1" fxFlex="100%">
+                <p>{{news.publishedAt}}</p>
+                <a href={{news.url}} target="_blank" mat-fab matTooltip="Read full news">More</a>
+              </div>                                         
+            </div>
+            <mat-divider></mat-divider>
+        </mat-card>
+        
+    </div>
+  </div>
+</mat-card>
