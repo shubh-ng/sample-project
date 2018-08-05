@@ -1,0 +1,74 @@
+<br><br>
+<form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+<div class="content-pane"
+fxLayout
+fxLayout.xs="column"
+fxLayoutAlign="center"
+fxLayoutGap="10px"
+fxLayoutGap.xs="0">
+<div class="item item-1" fxFlex="40%">
+
+  <mat-card>
+      <mat-card-title>{{loginStatus}}</mat-card-title>
+      <mat-divider></mat-divider><br>
+      <mat-card-title><img src="./../../assets/k_p_logo.png" width="70" height="70"></mat-card-title>
+      <div
+        fxLayout
+        fxLayout.xs="column"
+        fxLayoutAlign="center"
+        fxLayoutGap="10px"
+        fxLayoutGap.xs="0"> 
+        <div class="item item-1" fxFlex="60%">
+            <mat-progress-bar *ngIf="isLoaded"  mode="indeterminate"></mat-progress-bar>
+        </div>
+      </div>  
+
+      <mat-divider></mat-divider><br>
+      <div
+        fxLayout
+        fxLayout.xs="column"
+        fxLayoutAlign="center"
+        fxLayoutGap="10px"
+        fxLayoutGap.xs="0">
+        <div class="item item-1" fxFlex="60%">
+            <mat-form-field appearance="outline">
+                <mat-label>Username</mat-label>
+                <input matInput placeholder="Placeholder" spellcheck="false" autocomplete="off" formControlName = "username">
+                <mat-icon matSuffix>account_circle</mat-icon>
+                <mat-hint></mat-hint>
+            </mat-form-field>
+        </div>
+        
+      </div>
+
+      <div
+        fxLayout
+        fxLayout.xs="column"
+        fxLayoutAlign="center"
+        fxLayoutGap="10px"
+        fxLayoutGap.xs="0">
+            <div class="item item-1" fxFlex="60%">
+              <mat-form-field appearance="outline" color="primary">
+                  <mat-label>Password</mat-label>
+                  <input matInput placeholder="Placeholder" spellcheck="false" type="password" autocomplete="off" formControlName = "password">
+                  <mat-icon matSuffix>vpn_key</mat-icon>
+                  <mat-hint></mat-hint>
+              </mat-form-field>
+            </div>
+      </div>
+
+      <div
+        fxLayout
+        fxLayout.xs="column"
+        fxLayoutAlign="center"
+        fxLayoutGap="10px"
+        fxLayoutGap.xs="0">
+            <div class="item item-1" fxFlex="60%">
+              <button mat-raised-button color="primary" [disabled]="!form.valid" style="width :100%; height: 50px;">{{submitLogin}}</button>
+            </div>
+      </div>
+    </mat-card>
+    </div>
+</div>
+</form>
+
