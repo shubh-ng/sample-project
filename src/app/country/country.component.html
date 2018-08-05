@@ -1,0 +1,121 @@
+<mat-progress-bar *ngIf="isLoaded" mode="indeterminate"></mat-progress-bar>
+
+<mat-card>
+  <mat-card-title>{{"Find Any Country Details  "|uppercase}} &nbsp; <i class="fa fa-globe"></i></mat-card-title>
+  <p class="paragraph">Now you don't have to search for any country details at different locations!
+  </p>
+  <mat-card-title>{{"Just"|uppercase}}</mat-card-title>
+
+  <div class="container"
+     fxLayout
+     fxLayout.xs="column"
+     fxLayoutAlign="center"
+     fxLayoutGap="10px"
+     fxLayoutGap.xs="0">
+    <div class="item item-1" fxFlex="50%">
+        <mat-form-field>
+            <mat-select class="blink" placeholder="Select a country" [(value)]="selectedCountry" (selectionChange)="getSelectedCountry()">
+              <mat-option *ngFor="let country of countryDetails" [value]="country.name">
+                {{country.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+    </div>
+  </div>
+  
+  <mat-card id="show-country-details" *ngIf="selectedCountryDetails">
+    <mat-card-title>{{selectedCountry}}</mat-card-title>
+    <mat-divider></mat-divider>
+    <div class="container"
+     fxLayout
+     fxLayout.xs="column"
+     fxLayoutAlign="center"
+     fxLayoutGap="10px"
+     fxLayoutGap.xs="0">
+        <div class="item item-1" fxFlex="50%">
+          <p class="sub-heading">Capital</p>
+        </div>
+        <div class="item item-1" fxFlex="50%">
+            <p class="sub-heading">{{selectedCountryDetails.capital}}</p> 
+        </div>
+    </div>
+    <mat-divider></mat-divider>
+
+
+    <div class="container"
+     fxLayout
+     fxLayout.xs="column"
+     fxLayoutAlign="center"
+     fxLayoutGap="10px"
+     fxLayoutGap.xs="0">
+        <div class="item item-1" fxFlex="50%">
+          <p class="sub-heading">Population</p>
+        </div>
+        <div class="item item-1" fxFlex="50%">
+            <p class="sub-heading">{{selectedCountryDetails.population}}</p> 
+        </div>
+    </div>
+    <mat-divider></mat-divider>
+
+
+    <div class="container"
+     fxLayout
+     fxLayout.xs="column"
+     fxLayoutAlign="center"
+     fxLayoutGap="10px"
+     fxLayoutGap.xs="0">
+        <div class="item item-1" fxFlex="50%">
+          <p class="sub-heading">Alpha Code</p>
+        </div>
+        <div class="item item-1" fxFlex="50%">
+            <p class="sub-heading">{{selectedCountryDetails.alpha2Code}}, {{selectedCountryDetails.alpha3Code}}</p> 
+        </div>
+    </div>
+    <mat-divider></mat-divider>
+
+
+    <div class="container"
+    fxLayout
+    fxLayout.xs="column"
+    fxLayoutAlign="center"
+    fxLayoutGap="10px"
+    fxLayoutGap.xs="0">
+       <div class="item item-1" fxFlex="50%">
+         <p class="sub-heading" >Currency</p>
+       </div>
+       <div class="item item-1" fxFlex="50%">
+           <p class="sub-heading">{{selectedCountryDetails.currencies[0].name}}, {{selectedCountryDetails.currencies[0].symbol}}</p> 
+       </div>
+   </div>
+   <mat-divider></mat-divider>
+
+
+   <div class="container"
+   fxLayout
+   fxLayout.xs="column"
+   fxLayoutAlign="center"
+   fxLayoutGap="10px"
+   fxLayoutGap.xs="0">
+      <div class="item item-1" fxFlex="50%">
+        <p class="sub-heading">Time zone</p>
+      </div>
+      <div class="item item-1" fxFlex="50%">
+          <p class="sub-heading">{{selectedCountryDetails.timezones[0]}}</p> 
+      </div>
+  </div>
+  <mat-divider></mat-divider>
+
+
+  <div class="container"
+  fxLayout
+  fxLayout.xs="column"
+  fxLayoutAlign="center"
+  fxLayoutGap="10px"
+  fxLayoutGap.xs="0">
+     <div class="item item-1" fxFlex="50%">
+        <img src={{selectedCountryDetails.flag}} width="200" height="100" matTooltip="country flag">
+     </div>
+  </div>
+
+  </mat-card>
+</mat-card>
